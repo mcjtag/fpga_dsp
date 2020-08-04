@@ -55,7 +55,7 @@ module filt_median #(
 reg [DATA_WIDTH*(ORDER-1)-1:0]shift;
 wire [DATA_WIDTH*ORDER-1:0]data_out;
 
-assign m_axis_tdata = data_out[DATA_WIDTH*ORDER/2-1-:DATA_WIDTH];
+assign m_axis_tdata = data_out[DATA_WIDTH*(ORDER/2+1)-1-:DATA_WIDTH];
 
 always @(posedge aclk) begin
 	if (aresetn == 1'b0) begin
